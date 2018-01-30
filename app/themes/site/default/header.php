@@ -57,7 +57,7 @@ if( isset( $_COOKIE['campaigns-io']['collapse-author-nav'] ) ){
     $collapsed_author_nav = 1;
 }
 
-$theme_base_css_path = base_url('themes/site/default/new-ui/assets/css') . '/';
+$theme_base_css_path = base_url('frontend/site/default/new-ui/assets/css') . '/';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,6 +66,7 @@ $theme_base_css_path = base_url('themes/site/default/new-ui/assets/css') . '/';
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <meta name="description" content="campaigns.io">
         <meta name="author" content="campaigns.io">
+        <!--link rel="shortcut icon" href="http://my.campaigns.io/frontend/site/default/images/favicon.png" type="image/png"-->
         <link rel="shortcut icon" href="http://my.campaigns.io/themes/site/default/images/favicon.png" type="image/png">
         <title>Campaigns.io - re-discover your website</title>
         <link href="<?php echo $assets_url; ?>/global/css/style.css" rel="stylesheet">

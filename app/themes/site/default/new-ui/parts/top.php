@@ -1,5 +1,5 @@
 <?php
-$theme_base_url = base_url() . 'themes/site/default/new-ui/';
+$theme_base_url = base_url() . 'frontend/site/default/new-ui/';
 
 $app_wrapper_classname = 'f6 before-init';
 
@@ -29,7 +29,7 @@ if( isset( $_COOKIE['campaigns-io'] ) ){
                     case 'business-overview':
                     case 'business-clients':
                     case 'business-products':
-                        require FCPATH . '/themes/site/default/new-ui/crm/common/content-nav.php';
+                        require FCPATH . '/frontend/site/default/new-ui/crm/common/content-nav.php';
                         break;
                     default:
                         require 'content-nav.php';

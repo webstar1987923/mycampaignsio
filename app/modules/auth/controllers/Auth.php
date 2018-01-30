@@ -698,7 +698,7 @@ class Auth extends CI_Controller {
 
         /* --------------------------------------------------------------------------------------------------- */
         
-        $theme_url = base_url() . 'themes/site/default/new-ui/';
+        $theme_url = base_url() . 'frontend/site/default/new-ui/';
         $page_data['url']['home'] = base_url() . 'auth/home';
         $page_data['url']['logo'] = $theme_url . 'img/campaigns-io-logo.png';
         

@@ -960,7 +960,7 @@ class CampaignIo_Pages_Authorized extends CampaignIo_Pages {
 
         $this->validate_user_domain_access( $domain_id, $user_id );
 
-        $theme_url = base_url() . 'themes/site/default/new-ui/';
+        $theme_url = base_url() . 'frontend/site/default/new-ui/';
 
         $this->page_data['default_values'] = array(
             "graph_keyword" => "n-o-n-e",
@@ -1988,7 +1988,7 @@ class CampaignIo_Pages_Authorized extends CampaignIo_Pages {
 
         /* ==================== DOMAIN VS DOMAIN // ==================== */
 
-        $theme_url = base_url() . 'themes/site/default/new-ui/';
+        $theme_url = base_url() . 'frontend/site/default/new-ui/';
 
         $this->page_data['available_values'] = array(
             'search_engines' => array()

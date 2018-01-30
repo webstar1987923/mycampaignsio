@@ -30,7 +30,7 @@ class CampaignIo_Pages extends CI_Controller {
 
         $this->load_helpers();
 
-        $theme_url = base_url() . 'themes/site/default/new-ui/';
+        $theme_url = base_url() . 'frontend/site/default/new-ui/';
 
         $this->page_data['url']['home'] = base_url() . 'auth/home';
         $this->page_data['url']['logo'] = $theme_url . 'img/campaigns-io-logo.png';
@@ -79,7 +79,7 @@ class CampaignIo_Pages extends CI_Controller {
 
     protected function page_stylesheets($page){
 
-        $local_base = base_url() . "themes/site/default/new-ui/assets/css/";
+        $local_base = base_url() . "frontend/site/default/new-ui/assets/css/";
 
         $styles = array();
         $styles[] = array( "rel" => "stylesheet", "href" => "https://fonts.googleapis.com/icon?family=Material+Icons" );
@@ -131,7 +131,7 @@ class CampaignIo_Pages extends CI_Controller {
 
     protected function page_scripts_bottom($page){
 
-        $local_base = base_url() . "themes/site/default/new-ui/assets/js/";
+        $local_base = base_url() . "frontend/site/default/new-ui/assets/js/";
 
         $bottom_scripts = array();
 
@@ -161,7 +161,7 @@ class CampaignIo_Pages extends CI_Controller {
             case 'business-overview':
                 $bottom_scripts[] = array( "src" => "//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js" );
                 $bottom_scripts[] = array( "src" => "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js" );
-                $bottom_scripts[] = array( "src" => base_url() . "themes/site/default/new-ui/assets/js/calendar.js" );
+                $bottom_scripts[] = array( "src" => base_url() . "frontend/site/default/new-ui/assets/js/calendar.js" );
                 $bottom_scripts[] = array( "type" => "text/javascript", "src" => $local_base . "Campaings-io-pages/business-overview.js" );
                 break;
             case 'domains-add':
@@ -172,7 +172,7 @@ class CampaignIo_Pages extends CI_Controller {
                 $bottom_scripts[] = array( "type" => "text/javascript", "src" => $local_base . "Campaings-io-pages/domain-overview.js" );
                 break;
             case 'single-domain-serps':
-                $bottom_scripts[] = array( "src" => base_url() . "themes/site/default/new-ui/assets/js/calendar.js" );
+                $bottom_scripts[] = array( "src" => base_url() . "frontend/site/default/new-ui/assets/js/calendar.js" );
                 $bottom_scripts[] = array( "type" => "text/javascript", "src" => $local_base . "Campaings-io-pages/domain-serps.js" );
                 break;
             case 'single-domain-analytics':

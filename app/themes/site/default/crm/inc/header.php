@@ -32,7 +32,7 @@
     }
 
     $crm_assets_path = base_url('assets/crm') . '/';
-	$theme_base_css_path = base_url('themes/site/default/new-ui/assets/css') . '/';
+	$theme_base_css_path = base_url('frontend/site/default/new-ui/assets/css') . '/';
 ?>
 <!DOCTYPE html>
 

@@ -27,7 +27,7 @@ if(!function_exists('get_template'))
 	$template_query=$CI->db->select('*')->from('options')->where('option_name', 'site_template')->get()->result();
 	$template=$template_query[0]->option_value;
 	if(!isset($template) || $template=='') {$template='default'; }
-	$theme_url=base_url().'themes/site/'.$template.'/';
+	$theme_url=base_url().'frontend/site/'.$template.'/';
 	return $theme_url;
   }
 }
@@ -53,7 +53,7 @@ if(!function_exists('get_theme'))
 	$template_query=$CI->db->select('*')->from('options')->where('option_name', 'admin_template')->get()->result();
 	$template=$template_query[0]->option_value;
 	if(!isset($template) || $template=='') {$template='default'; }
-	$theme_url=base_url().'themes/admin/'.$template.'/';
+	$theme_url=base_url().'frontend/admin/'.$template.'/';
 	return $theme_url;
   }
 }

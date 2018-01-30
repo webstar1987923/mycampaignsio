@@ -76,7 +76,7 @@ if( ! function_exists('gravatar_thumb') ){
         $default_thumb = site_url().'uploads/images/profile.jpg';
         
         // Alternative default thumb.
-        // $default_thumb = base_url() . 'themes/site/default/new-ui/img/user-thumb.png';
+        // $default_thumb = base_url() . 'frontend/site/default/new-ui/img/user-thumb.png';
         
         return "http://www.gravatar.com/avatar/".md5(strtolower(trim($email)))."?d=".urlencode($default_thumb)."&s=".$size;
     }
@@ -102,9 +102,9 @@ if( ! function_exists('checkbox_component') ){
     <title></title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <!-- <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css" /> -->
-    <link rel="stylesheet" href="<?php echo base_url(); ?>themes/site/default/new-ui/assets/css/tachyons.min.css" />
-    <link rel="stylesheet" href="<?php echo base_url(); ?>themes/site/default/new-ui/assets/css/styles.min.css" />
-        <script type="text/javascript" src="<?php echo base_url(); ?>themes/site/default/new-ui/assets/js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>frontend/site/default/new-ui/assets/css/tachyons.min.css" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>frontend/site/default/new-ui/assets/css/styles.min.css" />
+        <script type="text/javascript" src="<?php echo base_url(); ?>frontend/site/default/new-ui/assets/js/jquery-3.2.1.min.js"></script>
 
     <!-- NOTE: New version of Chart.js [2.6.0] has bugs in IE browsers, especially ysing time scales. -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>

@@ -141,7 +141,7 @@ if ($_SERVER['HTTP_HOST'] == 'login.campaigns.io') {
  *
  * NO TRAILING SLASH!
  */
-	$view_folder = 'themes';
+	$view_folder = 'frontend';
 
 
 /*
