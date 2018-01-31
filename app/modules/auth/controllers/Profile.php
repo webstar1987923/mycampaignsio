@@ -17,7 +17,7 @@ class Profile extends CI_Controller
 		$this->load->library('form_validation');
 		$this->load->library('my_form_validation');
 		$this->load->model('auth/user_model');
-                $this->load->model('auth/analyze_model');
+        $this->load->model('auth/analyze_model');
 	}
 
 	/* User Profile Page */
@@ -223,21 +223,22 @@ class Profile extends CI_Controller
 			}
 		}
 	}
-        function mysites() {
-            if (!$this->ci_auth->is_logged_in()) {
-                redirect(site_url('/auth/login'));
-            } elseif ($this->ci_auth->is_logged_in(FALSE)) {      // logged in, not activated
-                redirect('/auth/sendactivation/');
-            } else {
-                if ($this->ci_auth->canDo('login_to_frontend')) {
-                    $data['assigned_sites'] = $this->analyze_model->getClientSites($this->session->userdata('user_id'));
-                    $this->load->view(get_template_directory() . 'mysites', $data);
-                } else {
-                    $this->session->set_flashdata('errors', 'You dont have permission to access this part of the site.');
-                    redirect(site_url('auth/profile/'));
-                }
-            }
-        }
+	
+	function mysites() {
+		if (!$this->ci_auth->is_logged_in()) {
+			redirect(site_url('/auth/login'));
+		} elseif ($this->ci_auth->is_logged_in(FALSE)) {      // logged in, not activated
+			redirect('/auth/sendactivation/');
+		} else {
+			if ($this->ci_auth->canDo('login_to_frontend')) {
+				$data['assigned_sites'] = $this->analyze_model->getClientSites($this->session->userdata('user_id'));
+				$this->load->view(get_template_directory() . 'mysites', $data);
+			} else {
+				$this->session->set_flashdata('errors', 'You dont have permission to access this part of the site.');
+				redirect(site_url('auth/profile/'));
+			}
+		}
+	}
 }
 /* End of file profile.php */
 /* Location: ./application/controllers/profile.php */
