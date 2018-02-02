@@ -36,13 +36,18 @@
         </div>
 
         <?php 
-          $curent_month_converstion = round($ecom_data['total_traffic']/$ecom_data['current_month']['total_orders'],2);
-          $last_month_converstion = round($ecom_data['total_traffic_prev']/$ecom_data['last_month']['total_orders'],2);
-          $conversion_diff = $current_month_conversion - $last_month_converstion;
+          if($ecom_data['current_month']['total_orders'] !=0) {
+            $curent_month_converstion = round($ecom_data['total_traffic']/$ecom_data['current_month']['total_orders'],2);
+            $last_month_converstion = round($ecom_data['total_traffic_prev']/$ecom_data['last_month']['total_orders'],2);
+            $conversion_diff = $current_month_conversion - $last_month_converstion;  
+          } else {
+            $conversion_diff = 0;
+          }
+          
          ?>
 
         <div class="bottom">
-          <span class="data"><?php echo number_format($ecom_data['total_traffic']/$ecom_data['current_month']['total_orders'],2); ?>%</span> <span class="diff <?php if($conversion_diff<0)echo 'down';else echo 'up'; ?>"> <?php echo $conversion_diff; ?></span>
+          <span class="data"><?php echo number_format($ecom_data['total_traffic']/max($ecom_data['current_month']['total_orders'],2),1); ?>%</span> <span class="diff <?php if($conversion_diff<0)echo 'down';else echo 'up'; ?>"> <?php echo $conversion_diff; ?></span>
         </div>
       </div>
       <div class="col-info">
@@ -60,11 +65,13 @@
         <div class="bottom">
           <?php 
 
-             $average_per_num = ($ecom_data['current_month']['total_sales']/$ecom_data['current_month']['total_orders']) - ($ecom['last_month']['average_sales']/$ecom_data['last_month']['total_orders']);
-             $average_per = (abs($average_per_num*100)) / ($ecom_data['last_month']['total_sales']/$ecom_data['last_month']['total_orders']); 
+             $average_per_num = ($ecom_data['current_month']['total_sales']/max($ecom_data['current_month']['total_orders'],1)) - ($ecom['last_month']['average_sales']/max($ecom_data['last_month']['total_orders'],1));
+
+
+             $average_per = (abs($average_per_num*100)) / max($ecom_data['last_month']['total_sales'],1); 
            ?>
 
-          <span class="data"><?php echo round($ecom_data['current_month']['total_sales']/$ecom_data['current_month']['total_orders']); ?></span> <span class="diff <?php if($average_per_num<0)echo 'down';else echo 'up'; ?>"><?php echo round($average_per,2); ?>%</span>
+          <span class="data"><?php echo round($ecom_data['current_month']['total_sales']/max($ecom_data['current_month']['total_orders'],1)); ?></span> <span class="diff <?php if($average_per_num<0)echo 'down';else echo 'up'; ?>"><?php echo round($average_per,2); ?>%</span>
 
         </div>
       </div>
@@ -79,8 +86,13 @@
       <div class="revenue-box-child">
         <span class="top">Last Month</span>
         <?php 
-          $calc = $ecom_data['current_month']['total_sales'] - $ecom_data['last_month']['total_sales'];
-          $x = (abs($calc)*100)/$ecom_data['last_month']['total_sales'];
+          if ($ecom_data['last_month']['total_sales'] !=0) {
+            $calc = $ecom_data['current_month']['total_sales'] - $ecom_data['last_month']['total_sales'];
+            $x = (abs($calc)*100)/$ecom_data['last_month']['total_sales'];
+          } else {
+            $x = 0;
+          }
+          
          ?>
         <span class="bottom"><?php echo $ecom_data['last_month']['total_sales']; ?> <span class="diff <?php if($calc > 0)echo 'up';else echo 'down'; ?>"><?php echo round($x,2); ?>%</span></span>
       </div>
